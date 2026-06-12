@@ -1,0 +1,201 @@
+@font-face {
+    font-family: 'Fonte foda';
+    src: url('../assets/fonts/CoolveticaRg.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Titulo';
+    src: url('../assets/fonts/FUTRFW.TTF') format('truetype');
+}
+
+/* Trocamos o body por esta classe */
+.login-container {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: 100%; /* ← Mude aqui! Troque 100vw por 100% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.45);
+    background-blend-mode: color-burn;
+    background-image: url('../assets/fundo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Força os inputs e botões a ficarem centralizados */
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+
+   width: 150px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: spawn 0.8s cubic-bezier(0.25,1,0.5,1) 0.3s forwards;
+
+}
+.titulo {
+    
+    font-size: x-large;
+    font-weight: 300;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #ffffff;
+
+}
+.log {
+
+    width: 350px;
+    padding: 35px 30px;
+    border-radius: 10%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fonte foda';
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+        0 12px 40px 0 rgba(0, 0, 0, 0.4),
+        inset 0 0 15px rgba(255, 255, 255, 0.1);
+    animation: spawn 0.8s cubic-bezier(0.25,1,0.5,1) forwards;
+
+}
+.email, .senha {
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    outline: none;
+    width: 240px;
+    height: 38px;
+    border-radius: 6px;
+    font-family: 'Fonte foda';
+    padding: 0 15px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1a1a1a;
+    font-size: 15px;
+    margin-bottom: 1px;
+    transition: all 0.3s ease;
+
+}
+.email:focus, .senha:focus {
+
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(89, 107, 91, 0.4);
+
+}
+.email::placeholder, .senha::placeholder {
+
+    color: rgba(0, 0, 0, 0.4);
+
+}
+.botao {
+    
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 175px;
+    margin-top: 10px;
+
+}
+.vol, .entrar {
+    
+    flex: 1;
+    padding: 10px 4px;
+    font-family: 'Fonte foda';
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+
+}
+.vol {
+
+    background-color: #49524A;
+
+}
+.entrar {
+
+    background-color: #596B5B;
+
+}
+.vol:hover, .entrar:hover {
+
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+
+}
+.vol:hover {
+
+    background-color: #3b423c;
+
+}
+.entrar:hover {
+
+    background-color: #4a594c;
+
+}
+.vol:active, .entrar:active {
+
+    transform: translateY(0) scale(1);
+
+}
+.link {
+
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+
+}
+.link:hover {
+
+    color: #ffffff;
+    text-decoration: underline;
+
+}
+@keyframes spawn {
+
+    from {
+        opacity: 0;
+        transform: translate(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+@keyframes shake {
+
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-8px); }
+    40%, 80% { transform: translateX(8px); }
+
+}
+.error-shake {
+
+    animation: shake 0.4s ease-in-out !important;
+
+}

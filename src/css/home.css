@@ -1,0 +1,401 @@
+@font-face {
+    font-family: 'Fonte foda';
+    src: url('../assets/fonts/CoolveticaRg.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Titulo';
+    src: url('../assets/fonts/FUTRFW.TTF') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fonte foda', sans-serif;
+    background-image: url('../assets/fundo.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: rgba(255, 255, 255, 0.9); /* Texto um pouco mais claro para destacar da imagem */
+    min-height: 100vh;
+}
+
+.dashboard-wrapper {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background: rgba(0, 0, 0, 0.3); /* Um leve fundo escuro para separar a barra */
+    backdrop-filter: blur(15px) saturate(120%);
+    -webkit-backdrop-filter: blur(15px) saturate(120%);
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Borda bem sutil */
+    padding: 24px;
+}
+
+.logo {
+    width: 50%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu a {
+    display: block;
+    padding: 12px 16px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.menu a.active {
+    background: rgba(255, 255, 255, 0.15); /* Botão ativo ganha um destaque branco translúcido */
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu a:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.main-content {
+    padding: 24px 32px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.breadcrumbs {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-bar input {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 8px 16px;
+    outline: none;
+    font-size: 12px;
+    font-family: 'Fonte foda', sans-serif;
+    background: rgba(0, 0, 0, 0.2); /* Fundo escuro leve para o input não sumir */
+    color: #ffffff;
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+    background: rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.grid-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05); /* O "vidro" do cartão */
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Borda para definir o contorno */
+    border-radius: 15px;
+    min-height: 160px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Sombra para soltar o cartão do fundo */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-credit {
+    grid-column: span 2;
+    background: rgba(0, 0, 0, 0.4); /* Cartão de crédito um pouco mais escuro para destaque */
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 420px;
+    min-width: 320px;
+    height: 100%;
+    min-height: 220px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.card-credit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.card-chip-icon {
+    width: 30px;
+    height: 22px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    position: relative;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.chip-line {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+
+.card-number {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    margin: 20px 0;
+    word-spacing: 4px;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.card-credit-footer {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-label {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.card-logo-master {
+    display: flex;
+    margin-left: auto;
+    position: relative;
+    width: 36px;
+    height: 24px;
+}
+
+.circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.circle-left {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    left: 0;
+}
+
+.circle-right {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    left: 12px;
+}
+
+.card-small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.card-icon-salary-box {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1); /* Um fundo sutil para destacar o ícone */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.card-icon-box {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: none;
+}
+
+.card-small-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.card-small-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+.card-small-subtitle {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15); /* Linha divisória visível, mas sutil */
+    margin: 16px 0;
+}
+
+.card-small-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.bottom-content {
+    width: 100%;
+    margin-top: 24px;
+    display: block;
+}
+
+.billing-card {
+    width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.2); /* Fundo sutil para agrupar a lista */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.billing-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 24px 0;
+}
+
+.billing-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.billing-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.billing-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.billing-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.billing-company,
+.billing-email,
+.billing-vat {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+}
+
+.billing-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.btn-delete,
+.btn-edit {
+    background: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Fonte foda', sans-serif;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-delete {
+    color: rgb(255, 90, 90);
+}
+
+.btn-edit {
+    color: #8dff92;
+}
+
+.btn-delete:hover,
+.btn-edit:hover {
+    opacity: 0.7;
+}
