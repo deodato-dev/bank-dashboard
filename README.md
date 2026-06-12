@@ -78,5 +78,3 @@ Se você vai contribuir com o código, fique atento a estas configurações avan
 O **React Compiler** é uma ferramenta poderosa, mas **não** está habilitada por padrão neste template devido ao seu impacto inicial na performance de build e dev.
 
 * Se você deseja ativá-lo para otimizar renderizações em produção, consulte a [Documentação Oficial do React Compiler](https://react.dev/learn/react-compiler/installation).
-
-```
